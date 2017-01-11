@@ -1,0 +1,2 @@
+# Przychodnia-Kolokwium
+Wersja konsolowa
