@@ -73,7 +73,12 @@ W - wyjście");
                             Console.ReadKey();
                             break;
                         }
-                        
+                        if(wiekLiczba < 0 || wiekLiczba > 109)
+                        {
+                            Console.WriteLine("Niepoprawny wiek!");
+                            Console.ReadKey();
+                            break;
+                        }
                         przychodnia.ZapiszDoLekarza(imieP, wiekLiczba, choroba);
                         break;
                     }
