@@ -32,39 +32,88 @@ W - wyjście");
                     string imieN = Console.ReadLine();
                     Console.WriteLine("Podaj specjalnosc");
                     string specjalnosc = Console.ReadLine();
-                    przychodnia.UstawLekarza(imieN, specjalnosc);
-                    Console.WriteLine("Ustawiono");
-                    Console.ReadKey();
-                    break;
+                    if (string.IsNullOrEmpty(imieN) || string.IsNullOrEmpty(specjalnosc))
+                    {
+                        Console.WriteLine("Puste!");
+                        Console.ReadKey();
+                        break;
+                    }
+                    else
+                    {
+                        przychodnia.UstawLekarza(imieN, specjalnosc);
+                        Console.WriteLine("Ustawiono");
+                        Console.ReadKey();
+                        break;
+                    }
                 case ConsoleKey.Z:
+                    if(!przychodnia.CzyLekarz())
+                    {
+                        Console.WriteLine("Najpierw dodaj lekarza!");
+                        Console.ReadKey();
+                        break;
+                    }
                     Console.WriteLine("Podaj imię i nazwisko pacjenta");
                     string imieP = Console.ReadLine();
                     Console.WriteLine("Podaj wiek pacjenta");
                     string wiek = Console.ReadLine();
-                    int wiekLiczba;
-                    if(!int.TryParse(wiek, out wiekLiczba))
+                    Console.WriteLine("Podaj chorobę");
+                     string choroba = Console.ReadLine();
+                     if (string.IsNullOrEmpty(imieP) || string.IsNullOrEmpty(wiek) || string.IsNullOrEmpty(choroba))
                     {
-                        Console.WriteLine("Bład przy podawaniu wieku, nie podano liczby całkowitej, wracam do menu");
+                        Console.WriteLine("Puste!");
                         Console.ReadKey();
                         break;
                     }
-                    Console.WriteLine("Podaj chorobę");
-                    string choroba = Console.ReadLine();
-                    przychodnia.ZapiszDoLekarza(imieP, wiekLiczba, choroba);
-                    break;
+                    else
+                    {
+                        int wiekLiczba;
+                        if (!int.TryParse(wiek, out wiekLiczba))
+                        {
+                            Console.WriteLine("Bład przy podawaniu wieku, nie podano liczby całkowitej, wracam do menu");
+                            Console.ReadKey();
+                            break;
+                        }
+                        
+                        przychodnia.ZapiszDoLekarza(imieP, wiekLiczba, choroba);
+                        break;
+                    }
                 case ConsoleKey.P:
+                    if (!przychodnia.CzyLekarz())
+                    {
+                        Console.WriteLine("Najpierw dodaj lekarza!");
+                        Console.ReadKey();
+                        break;
+                    }
                     Console.WriteLine(przychodnia.WykonajPorade());
                     Console.ReadKey();
                     break;
                 case ConsoleKey.B:
+                    if (!przychodnia.CzyLekarz())
+                    {
+                        Console.WriteLine("Najpierw dodaj lekarza!");
+                        Console.ReadKey();
+                        break;
+                    }
                     Console.WriteLine(przychodnia.WykonajBadanie());
                     Console.ReadKey();
                     break;
                 case ConsoleKey.C:
+                    if (!przychodnia.CzyLekarz())
+                    {
+                        Console.WriteLine("Najpierw dodaj lekarza!");
+                        Console.ReadKey();
+                        break;
+                    }
                     Console.WriteLine("Czas oczekiwania: " + przychodnia.CzasOczekiwania());
                     Console.ReadKey();
                     break;
                 case ConsoleKey.R:
+                    if (!przychodnia.CzyLekarz())
+                    {
+                        Console.WriteLine("Najpierw dodaj lekarza!");
+                        Console.ReadKey();
+                        break;
+                    }
                     przychodnia.GenerujRaport();
                     Console.WriteLine("Nacisnij enter by wrocic do menu");
                     Console.ReadKey();

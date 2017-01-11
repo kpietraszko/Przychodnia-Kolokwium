@@ -1,0 +1,2 @@
+Lekarz, imię i nazwisko: ll, specjalność: l
+Czas oczekiwania: 0

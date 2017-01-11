@@ -1,0 +1,2 @@
+Lekarz, imię i nazwisko: jan , specjalność: e
+Czas oczekiwania: 0
