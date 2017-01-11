@@ -1,0 +1,5 @@
+C:\Users\local\Desktop\Kolokwium\Kolokwium\bin\Debug\Kolokwium.exe.config
+C:\Users\local\Desktop\Kolokwium\Kolokwium\bin\Debug\Kolokwium.exe
+C:\Users\local\Desktop\Kolokwium\Kolokwium\bin\Debug\Kolokwium.pdb
+C:\Users\local\Desktop\Kolokwium\Kolokwium\obj\Debug\Kolokwium.exe
+C:\Users\local\Desktop\Kolokwium\Kolokwium\obj\Debug\Kolokwium.pdb
